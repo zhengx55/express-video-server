@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-new mongoose.Schema({
+module.exports = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -12,5 +12,18 @@ new mongoose.Schema({
   password: {
     type: String,
     required: true,
+  },
+  avatar: {
+    type: String,
+    required: false,
+    default: null,
+  },
+  addTime: {
+    type: Date,
+    default: Date.now(),
+  },
+  updateTime: {
+    type: Date,
+    default: Date.now(),
   },
 });
