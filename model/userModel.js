@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const md5 = require("md5");
 module.exports = new mongoose.Schema({
   username: {
     type: String,
@@ -12,6 +12,7 @@ module.exports = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+    set: (value) => md5(value),
   },
   avatar: {
     type: String,
