@@ -4,9 +4,14 @@ exports.list = async (req, res) => {};
 
 exports.delete = async (req, res) => {};
 
-exports.register = async (req, res, next) => {
+exports.login = async (req, res) => {};
+
+exports.register = async (req, res) => {
   const userModel = new User(req.body);
-  const dbStatus = await userModel.save();
-  console.log(req.body);
-  res.status(201).json(dbStatus);
+  const dbBack = await userModel.save();
+  const user = dbBack.toJSON();
+  delete user.password;
+  res.status(201).json({
+    user,
+  });
 };

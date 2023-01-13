@@ -9,6 +9,10 @@ module.exports = new mongoose.Schema({
     type: String,
     required: true,
   },
+  phone: {
+    type: String,
+    default: null,
+  },
   password: {
     type: String,
     required: true,
