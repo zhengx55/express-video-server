@@ -17,6 +17,7 @@ module.exports = new mongoose.Schema({
     type: String,
     required: true,
     set: (value) => md5(value),
+    select: false,
   },
   avatar: {
     type: String,
