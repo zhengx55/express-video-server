@@ -36,4 +36,12 @@ module.exports = new mongoose.Schema({
     type: String,
     default: null,
   },
+  image: {
+    type: String,
+    default: null,
+  },
+  channleId: {
+    type: String,
+    default: null,
+  },
 });

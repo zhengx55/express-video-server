@@ -38,3 +38,17 @@ exports.register = async (req, res) => {
     user,
   });
 };
+
+/**
+ * Update user indo
+ * @param {*} req
+ * @param {*} res
+ */
+exports.update = async (req, res) => {};
+
+/**
+ * User delete
+ * @param {*} req
+ * @param {*} res
+ */
+exports.delete = async (req, res) => {};

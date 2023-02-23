@@ -7,6 +7,7 @@ const { verifyToken } = require("../util/jwt");
 router
   .post("/register", validator.register, userController.register)
   .post("/login", validator.login, userController.login)
-  .get("/list", verifyToken, userController.list);
+  .get("/list", verifyToken, userController.list)
+  .put("/", verifyToken, userController.update);
 
 module.exports = router;
