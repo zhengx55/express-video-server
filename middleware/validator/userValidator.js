@@ -59,7 +59,13 @@ module.exports.login = validate([
     })
     .bail(),
   ,
-  body("password").notEmpty().withMessage("密码不能为空").bail(),
+  body("password")
+    .notEmpty()
+    .withMessage("密码不能为空")
+    .bail()
+    .isLength({ min: 5 })
+    .withMessage("用户名长度不能小于5")
+    .bail(),
 ]);
 
 module.exports.update = validate([

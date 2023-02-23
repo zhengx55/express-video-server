@@ -1,5 +1,4 @@
 const { User } = require("../model");
-const jwt = require("jsonwebtoken");
 const { createToken } = require("../util/jwt");
 exports.list = async (req, res) => {};
 
@@ -34,6 +33,7 @@ exports.register = async (req, res) => {
   const userModel = new User(req.body);
   const dbBack = await userModel.save();
   const user = dbBack.toJSON();
+  delete user.password;
   res.status(201).json({
     user,
   });

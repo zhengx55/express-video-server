@@ -32,4 +32,8 @@ module.exports = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  cover: {
+    type: String,
+    default: null,
+  },
 });

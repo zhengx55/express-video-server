@@ -1,11 +1,12 @@
-var express = require("express");
-var router = express.Router();
-var userController = require("../controller/userController");
-var validator = require("../middleware/validator/userValidator");
+const express = require("express");
+const router = express.Router();
+const userController = require("../controller/userController");
+const validator = require("../middleware/validator/userValidator");
+const { verifyToken } = require("../util/jwt");
 
 router
   .post("/register", validator.register, userController.register)
   .post("/login", validator.login, userController.login)
-  .get("/list", userController.list);
+  .get("/list", verifyToken, userController.list);
 
 module.exports = router;
